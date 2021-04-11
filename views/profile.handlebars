@@ -6,34 +6,36 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create a New Blog:</h3>
+    <h3 id="CANB">Create a New Blog:</h3>
 
     <form class="form new-project-form">
       <div class="form-group">
-        <label for="blog-name">Title your blog:</label>
+        <label id="title" for="blog-name">Title your blog:</label>
         <input class="form-input" type="text" id="blog-name" name="blog-name" />
       </div>
       <div class="form-group">
-        <label for="blog-body">Blog Body:</label>
+        <label id="body" for="blog-body">Blog Body:</label>
         <textarea class="form-input" id="blog-body" name="blog-body"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button id="createBtn" type="submit" class="btn btn-primary">Create</button>
+        <button id="sendUpdate" type="submit" class="btn btn-primary d-none">Update</button>
       </div>
     </form>
   </div>
 
   {{#if blogposts.length}}
   <div class="col-md-6 project-list">
-    <h3>Current Blog Posts:</h3>
+    <h3 class="mb-5">Current Blog Posts:</h3>
 
     {{#each blogposts as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
+    <div class="row mb-2 ml-1 p-1 border border-secondary rounded">
+      <div class="col-md-7">
         <h4><a href="/post/{{post.id}}">{{post.blog_name}}</a></h4>
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+      <div class="col-md-5">
+        <button id="updateBtn" class="btn btn-sm btn-info" data-name="{{post.blog_name}}" data-body="{{blog_body}}" data-id="{{post.id}}">UPDATE</button>
+        <button id="deleteBtn" class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
