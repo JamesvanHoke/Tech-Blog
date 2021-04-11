@@ -27,7 +27,7 @@ BlogPost.hasMany(Comment, {
 // End BlogPost Associations
 // Comment Associations
 
-Comment.belongsTo(User {
+Comment.belongsTo(User, {
   foreignKey: "user_id"
 })
 
