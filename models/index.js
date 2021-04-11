@@ -1,13 +1,40 @@
 const User = require('./User');
-const Project = require('./Project');
+const BlogPost = require('./BlogPost');
+const Comment = require('./comment');
 
-User.hasMany(Project, {
+// User Associations
+User.hasMany(BlogPost, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  onDelete: 'CASCADE',
 });
 
-Project.belongsTo(User, {
-  foreignKey: 'user_id'
+User.hasMany(Comment, {
+  foreignKey:"user_id"
+})
+
+// End User Associations
+// BlogPost Associations
+
+BlogPost.belongsTo(User, {
+  foreignKey: 'user_id',
 });
 
-module.exports = { User, Project };
+
+BlogPost.hasMany(Comment, {
+  foreignKey: 'post_id',
+});
+
+// End BlogPost Associations
+// Comment Associations
+
+Comment.belongsTo(User {
+  foreignKey: "user_id"
+})
+
+Comment.belongsTo(BlogPost, {
+  foreignKey: 'post_id',
+});
+
+// End Comment Associations
+
+module.exports = { User, BlogPost, Comment };
