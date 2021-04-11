@@ -29,18 +29,22 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector('#password-signup').value.trim();
 
   if (name && password) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ name, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.replace('/profile');
+    if (password.length > 7){
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({ name, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert(response.statusText);
+      }
     } else {
-      alert(response.statusText);
+      alert("Password must be 8 characters or more")
     }
-  }
+    }
 };
 
 document
