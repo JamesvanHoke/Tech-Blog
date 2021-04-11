@@ -7,6 +7,7 @@
 <div class="text-center" data-type="comment-div">
   <h3>Comments</h3>
   <hr>
+          {{#if logged_in}}
   <form class="form new-comment-form">
     <div class="form-group">
       <label for="comment">Leave a comment:</label>
@@ -16,7 +17,7 @@
       <button type="submit" id="commentBtn" data-id="{{id}}" class="btn btn-primary">Comment</button>
     </div>
   </form>
-
+        {{/if}}
   {{#each comments as |comment|}}
   {{> loadComment comment}}
   {{/each}}
