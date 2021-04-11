@@ -50,7 +50,7 @@ router.get('/post/:id', async (req, res) => {
       ],
     });
     const comments = commentData.map((data) => data.get({ plain: true }));
-    console.log(comments);
+
     res.render('post', {
       ...post,
       comments,
