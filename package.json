@@ -1,9 +1,10 @@
 {
-  "name": "crowd-funding",
+  "name": "text-blog",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
+    "prestart": "node seeds/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seed": "node seeds/seed.js"
