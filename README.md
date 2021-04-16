@@ -2,9 +2,7 @@
          
 ## Description
 
-This fullstack application is a CMS style blog. The frontend uses the handlebars templating engine to render the html pages while the backend is powered with a Node.js express server and a mysql database.
-
-In this app users can create an account, log in, create posts, update posts, delete post, and add comments on theirs and others posts.
+This application is a fullstack CMS blog. The frontend utilizes  the handlebars engine to render the html pages. The backend is powered with a Node.js express server and a mysql database. Users can Signup and Login to an account, CRUD posts, and add comments on theirs and others posts.
 
 ## Table of Contents
 
