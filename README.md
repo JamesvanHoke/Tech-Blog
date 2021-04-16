@@ -40,5 +40,9 @@ N/A
 ## Contribute
 Contact me via github or fork the project and submit an issue 
 
+## Deployed
+
+<a href="https://tech-blog-jvh.herokuapp.com">Tech-Blog-JVH</a>
+
 ## Questions
 If you have any questions about this project contact me through my Github [jamesvanHoke](https://github.com/jamesvanHoke).
